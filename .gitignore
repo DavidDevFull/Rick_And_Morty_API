@@ -1,0 +1,14 @@
+# Dependências
+node_modules/
+
+# Arquivos de configuração.
+package.json
+package-lock.json
+tsconfig.json
+
+# Pasta de compilação.
+scripts/dist/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db

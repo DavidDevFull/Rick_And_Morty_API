@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url(styles/card.css);
+:root {
+  --blue: #08b1c9;
+  --blue2: #202f67;
+  --blue3: #1c2547;
+
+  --backgroundPage: #141414;
+  --black1: #2b2c2e;
+  --black2: #3c3d41;
+  --white: #d3afdb;
+
+  --red: #ff4181;
+  --blue: #50c8ef;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: var(--white);
+  border: none;
+}
+*::-webkit-scrollbar {
+  overflow: visible;
+  width: 0px;
+  background-color: transparent;
+}
+body {
+  font-family: "Geo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  transition: 0.5s;
+  background: var(--backgroundPage);
+
+}
+header{
+  background: var(--black1);
+  height: 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  border-radius: .5rem;
+  text-align: center;
+}
+ #secScrollInfinit {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+    width: 100%;
+    margin: 0 auto;
+    padding: .5rem;
+    gap: .5rem;
+
+}
+@media (max-width: 932px) and (orientation: landscape) {
+  #secScrollInfinit {
+    grid-template-columns: repeat(2, 1fr); /* Força 2 colunas lado a lado */
+    grid-auto-rows: auto; /* Mantém a altura das linhas automática */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #secScrollInfinit {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  #secScrollInfinit {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    max-width: 1300px;
+  }
+}
