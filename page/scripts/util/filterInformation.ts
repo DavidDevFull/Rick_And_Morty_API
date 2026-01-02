@@ -10,12 +10,8 @@ interface Character {
   };
 }
 
-interface ApiResponse {
-  results: Character[];
-}
-
-const filterInformation = (data: ApiResponse): Character[] => {
-  return data.results.map((character) => ({
+const filterInformation = (characters: Character[]): Character[] => {
+  return characters.map((character) => ({
     image: character.image,
     name: character.name,
     id: character.id,
@@ -23,8 +19,9 @@ const filterInformation = (data: ApiResponse): Character[] => {
     species: character.species,
     status: character.status,
     origin: {
-      name: character.origin.name
-    }
+      name: character.origin.name,
+    },
   }));
 };
-export default filterInformation
+
+export default filterInformation;

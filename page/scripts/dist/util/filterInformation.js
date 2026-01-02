@@ -1,5 +1,5 @@
-const filterInformation = (data) => {
-    return data.results.map((character) => ({
+const filterInformation = (characters) => {
+    return characters.map((character) => ({
         image: character.image,
         name: character.name,
         id: character.id,

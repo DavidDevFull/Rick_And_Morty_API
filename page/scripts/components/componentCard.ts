@@ -133,19 +133,10 @@ export default class ComponentCard {
       <section class="cardOfCharacter">
         <img src="${image}" alt="${name}">
         <div class="cardInfo">
-          <span>${name} #${id}</span>
-          <span ${this.getStyle(status)}>${this.translate(
-        "status",
-        status
-      )}</span>
-          <span ${this.getStyle(species)}>${this.translate(
-        "species",
-        species
-      )}</span>
-          <span ${this.getStyle(gender)}>${this.translate(
-        "gender",
-        gender
-      )}</span>
+          <span>${name} | #${id}</span>
+          <span ${this.getStyle(status)}>${this.translate("status",status)}</span>
+          <span ${this.getStyle(species)}>${this.translate("species",species)}</span>
+          <span ${this.getStyle(gender)}>${this.translate("gender",gender)}</span>
           <span>${this.translate("origin", origin.name)}</span>
         </div>
       </section>

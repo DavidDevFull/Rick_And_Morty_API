@@ -1,44 +1,45 @@
 .cardOfCharacter {
    width: 100%;
-   height: 175px;
+   height: clamp(150px, 5vw, 175px);
    background: var(--black1);
    border-radius: .5rem;
+   border: solid 5px var(--black2);
    overflow: hidden;
-
+   background: #0000002c;
    display: flex;
    justify-content: space-between;
    align-items: center;
 
    font-size: 1.3rem;
 
+   box-shadow: inset 0 0 20px 0 var(--black2);
 }
 
 .cardOfCharacter img{
    width: 45%;
    height: 100%;
+   border-radius: .5rem;
+   z-index: -1;
 }
 .cardOfCharacter div {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
+   display: flex;
+   justify-content: space-between;
    align-items: center;
+   flex-direction: column;
    gap: .3rem;
    width: 55%;
-   height: 75%;
    padding: .5rem;
    text-align: center;
-   font-size: clamp(.6rem, 1vw, .7rem);
-
+   font-size: .6rem;
 }
 .cardOfCharacter div span{
    border: solid 1px;
    padding: .3rem 0;
    border-radius: .2rem;
+   width: 100%;
+   background: rgba(0, 0, 0, 0.178);
 
 }
-
-/* Nome e ID ocupam o topo; Origem ocupa a base inteira */
-.cardOfCharacter span:nth-child(1) { grid-column: span 2;  } 
-.cardOfCharacter span:nth-child(6) { grid-column: span 3;  }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   #cardOfCharacter{
