@@ -6,8 +6,8 @@ export default class SearchCharacter {
 
   constructor(tagFather: HTMLDivElement) {
     this.tagFather = tagFather;
-    this.render(); // Primeiro injeta o HTML
-    this.initEvents(); // Depois vincula os eventos aos elementos injetados
+    this.render(); 
+    this.initEvents(); 
   }
 
   private buildSearchUrl(value: string): string {

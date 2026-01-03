@@ -4,8 +4,8 @@ export default class SearchCharacter {
     timer;
     constructor(tagFather) {
         this.tagFather = tagFather;
-        this.render(); // Primeiro injeta o HTML
-        this.initEvents(); // Depois vincula os eventos aos elementos injetados
+        this.render();
+        this.initEvents();
     }
     buildSearchUrl(value) {
         const trimmedValue = value.trim();

@@ -1,11 +1,13 @@
-import ComponentCard from "../components/componentCard.js";
+import ComponentCard from "../components/card.js";
 import filterInformation from "./filterInformation.js";
+import { loading, messageError } from "../components/loading&MessageError.js";
 export const requestApi = (value) => ({
     byNumber: `https://rickandmortyapi.com/api/character/${value}`,
     byString: `https://rickandmortyapi.com/api/character/?name=${value}`,
     byPage: `https://rickandmortyapi.com/api/character/?page=${value}`,
 });
 export const request = async (url, container) => {
+    const loadingElement = loading(container);
     try {
         const response = await fetch(url);
         if (!response.ok)
@@ -17,7 +19,10 @@ export const request = async (url, container) => {
     }
     catch (error) {
         console.error("Erro na requisição:", error);
+        messageError(container);
+    }
+    finally {
+        loadingElement.remove();
     }
 };
-//      console.info(`Dados da página (${contPage}): `, filtering);
 //# sourceMappingURL=requestApi.js.map

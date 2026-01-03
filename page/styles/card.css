@@ -10,9 +10,8 @@
    justify-content: space-between;
    align-items: center;
 
-   font-size: 1.3rem;
-
    box-shadow: inset 0 0 20px 0 var(--black2);
+   animation: slideIn 0.7s ease-out; 
 }
 
 .cardOfCharacter img{
@@ -45,4 +44,9 @@
   #cardOfCharacter{
    flex-direction: column-reverse;
   }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

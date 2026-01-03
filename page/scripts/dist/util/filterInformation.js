@@ -7,8 +7,8 @@ const filterInformation = (characters) => {
         species: character.species,
         status: character.status,
         origin: {
-            name: character.origin.name
-        }
+            name: character.origin.name,
+        },
     }));
 };
 export default filterInformation;

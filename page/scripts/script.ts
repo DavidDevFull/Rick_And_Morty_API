@@ -11,12 +11,12 @@ let isFetching = false;
 let contPage = 1;
 
 request(requestApi(contPage).byPage, bodyScroll);
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", async () => {
   if (window.scrollY + window.innerHeight + 150 > document.body.scrollHeight) {
     if (isFetching) return;
     isFetching = true;
     contPage++;
-    request(requestApi(contPage).byPage, bodyScroll);
+    await request(requestApi(contPage).byPage, bodyScroll);
     isFetching = false;
   }
 });
