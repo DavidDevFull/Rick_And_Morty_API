@@ -4,7 +4,7 @@ const bodyScroll = document.getElementById("secScrollInfinit");
 const sectionMenu = document.getElementById("sectionMenu");
 const callMenu = document.getElementById("callMenu");
 let isFetching = false;
-let contPage = 40;
+let contPage = 0;
 const maxPage = 42;
 request(requestApi(contPage).byPage, bodyScroll);
 const handleScroll = async () => {
