@@ -7,19 +7,33 @@ const bodyScroll = document.getElementById(
 const sectionMenu = document.getElementById("sectionMenu") as HTMLDivElement;
 const callMenu = document.getElementById("callMenu") as HTMLInputElement;
 
-let isFetching = false;
-let contPage = 1;
+let isFetching:boolean = false;
+let contPage:number = 40;
+const maxPage:number = 42;
 
 request(requestApi(contPage).byPage, bodyScroll);
-window.addEventListener("scroll", async () => {
+
+const handleScroll = async () => {
+  if (contPage >= maxPage) {
+    window.removeEventListener("scroll", handleScroll);
+    console.info("Não é possível mais incrementar cards");
+    return;
+  }
+
   if (window.scrollY + window.innerHeight + 150 > document.body.scrollHeight) {
     if (isFetching) return;
+
     isFetching = true;
     contPage++;
+
     await request(requestApi(contPage).byPage, bodyScroll);
+
     isFetching = false;
   }
-});
+};
+
+window.addEventListener("scroll", handleScroll);
+
 
 callMenu.addEventListener("change", () => {
   const isOpen = callMenu.checked;
@@ -28,7 +42,7 @@ callMenu.addEventListener("change", () => {
   document.body.classList.toggle("menu-open", isOpen);
 });
 
-document.addEventListener("click", (event) => {
+document.addEventListener("click", (event: PointerEvent) => {
   const target = event.target;
 
   if (!(target instanceof Node)) return;
