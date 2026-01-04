@@ -8,7 +8,7 @@ const sectionMenu = document.getElementById("sectionMenu") as HTMLDivElement;
 const callMenu = document.getElementById("callMenu") as HTMLInputElement;
 
 let isFetching:boolean = false;
-let contPage:number = 0;
+let contPage:number = 1;
 const maxPage:number = 42;
 
 request(requestApi(contPage).byPage, bodyScroll);
